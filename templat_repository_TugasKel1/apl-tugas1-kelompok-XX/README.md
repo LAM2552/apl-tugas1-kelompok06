@@ -16,7 +16,7 @@ Konteks & Keputusan Arsitektur (Pertemuan 5) serta Karakteristik Arsitektur & At
 | 1 | 13020240299 | RAFSYANJANI EFFENDY | @rafsyaraptutu-dev |  |
 | 2 | 13020240339 | AHMAD ANDIRA ALAM  | @LAM2552 | A1-A2 |
 | 3 | 13020240287 | AMAR FARID A TOLOA | @amaraf5977-dot |  |
-| 4 | 13020240190 | MUH. AIDIL | @aidilresse-cmyk | |
+| 4 | 13020240190 | MUH. AIDIL | @aidilresse-cmyk | B1-B5 |
 | 5 | 13020240081 | A.MUHAMMAD ADITYA IRAWAN | @Adit16Umi | |
 
 ## Peta berkas dan penanggung jawab
@@ -31,11 +31,11 @@ Status: Belum / Draf / Selesai. Perbarui tabel ini setiap ada perubahan.
 | A3 | laporan/A3-batasan.md | | Belum |
 | A4 | laporan/A4-asr.md | | Belum |
 | A5 | laporan/A5-keputusan-arsitektur.md dan adr/ | | Belum |
-| B1 | laporan/B1-karakteristik.md | | Belum |
+| B1 | laporan/B1-karakteristik.md | | Selesai |
 | B2 | laporan/B2-atribut-terukur.md | | Belum |
 | B3 | laporan/B3-tiga-struktur.md dan diagram/ | | Belum |
 | B4 | laporan/B4-iso-25010.md | | Belum |
-| B5 | laporan/B5-trade-off.md | | Belum |
+| B5 | laporan/B5-trade-off.md | | Selesai |
 | BAB IV | laporan/BAB4-penutup.md | | Belum |
 | Pustaka | laporan/daftar-pustaka.md | | Belum |
 

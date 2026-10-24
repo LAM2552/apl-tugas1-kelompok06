@@ -31,11 +31,11 @@ Status: Belum / Draf / Selesai. Perbarui tabel ini setiap ada perubahan.
 | A3 | laporan/A3-batasan.md | | Belum |
 | A4 | laporan/A4-asr.md | | Belum |
 | A5 | laporan/A5-keputusan-arsitektur.md dan adr/ | | Belum |
-| B1 | laporan/B1-karakteristik.md | | Selesai |
+| B1 | laporan/B1-karakteristik.md | @aidilresse-cmyk | Selesai |
 | B2 | laporan/B2-atribut-terukur.md | | Belum |
 | B3 | laporan/B3-tiga-struktur.md dan diagram/ | | Belum |
 | B4 | laporan/B4-iso-25010.md | | Belum |
-| B5 | laporan/B5-trade-off.md | | Selesai |
+| B5 | laporan/B5-trade-off.md | @aidilresse-cmyk | Selesai |
 | BAB IV | laporan/BAB4-penutup.md | | Belum |
 | Pustaka | laporan/daftar-pustaka.md | | Belum |
 

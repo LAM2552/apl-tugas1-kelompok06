@@ -4,20 +4,20 @@ Konteks & Keputusan Arsitektur (Pertemuan 5) serta Karakteristik Arsitektur & At
 
 | Keterangan | Isi |
 |---|---|
-| Kelompok | Bagian [I / II / III] – Kelompok [XX] |
-| Subsistem | [salin dari tabel 2.2 pada dokumen tugas] |
-| Layanan inti | [salin dari tabel 2.2 pada dokumen tugas] |
-| Perwakilan kelompok | [nama, stambuk] |
+| Kelompok | Bagian [III] – Kelompok [6] |
+| Subsistem | Academic Management |
+| Layanan inti | Layanan magang dan studi independen (MSIB): pendaftaran, penempatan mitra, logbook, bimbingan, dan penilaian |
+| Perwakilan kelompok | Ahmad Andira Alam, 13020240339 |
 
 ## Anggota
 
 | No | Stambuk | Nama | Akun GitHub | Kode yang dikerjakan |
 |---|---|---|---|---|
-| 1 | 13020240299 | RAFSYANJANI EFFENDY | @ |  |
+| 1 | 13020240299 | RAFSYANJANI EFFENDY | @@rafsyaraptutu-dev |  |
 | 2 | 13020240339 | AHMAD ANDIRA ALAM  | @LAM2552 | A1-A2 |
-| 3 | 13020240287 | AMAR FARID A TOLOA | @ |  |
-| 4 | 13020240190 | MUH. AIDIL | @ | |
-| 5 | 13020240081 | A.MUHAMMAD ADITYA IRAWAN | @ | |
+| 3 | 13020240287 | AMAR FARID A TOLOA | @@amaraf5977-dot |  |
+| 4 | 13020240190 | MUH. AIDIL | @@aidilresse-cmyk | |
+| 5 | 13020240081 | A.MUHAMMAD ADITYA IRAWAN | @Adit16Umi | |
 
 ## Peta berkas dan penanggung jawab
 
@@ -25,9 +25,9 @@ Status: Belum / Draf / Selesai. Perbarui tabel ini setiap ada perubahan.
 
 | Kode | Berkas | Penanggung jawab | Status |
 |---|---|---|---|
-| BAB I | laporan/BAB1-pendahuluan.md | | Belum |
-| A1 | laporan/A1-konteks-arsitektur.md | | Belum |
-| A2 | laporan/A2-stakeholder.md | | Belum |
+| BAB I | laporan/BAB1-pendahuluan.md | | Selesai |
+| A1 | laporan/A1-konteks-arsitektur.md | | Selesai |
+| A2 | laporan/A2-stakeholder.md | | Selesai |
 | A3 | laporan/A3-batasan.md | | Belum |
 | A4 | laporan/A4-asr.md | | Belum |
 | A5 | laporan/A5-keputusan-arsitektur.md dan adr/ | | Belum |

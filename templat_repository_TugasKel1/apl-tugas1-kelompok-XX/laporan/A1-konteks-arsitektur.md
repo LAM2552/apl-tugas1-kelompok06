@@ -1,5 +1,3 @@
-# A1. Analisis Empat Konteks Arsitektur
-
 BAB I 
 PENDAHULUAN
 
@@ -25,7 +23,5 @@ Di luar lingkup:
 1.3	Sumber Data
 Data dan informasi dalam laporan ini dikumpulkan beberapa sumber.
 -	Pengalaman sebagai pengguna: mencoba sendiri layanannya (SIAKAD, UMI-Kalam).
- 
+<img width="940" height="513" alt="image" src="https://github.com/user-attachments/assets/d32a3567-8967-4103-9909-753d7046c756" />
 Hanya terdapat page yang menjelaskan Magang & Studi Independen Bersertifikat (MSIB) di Kalam UMI.
-
-

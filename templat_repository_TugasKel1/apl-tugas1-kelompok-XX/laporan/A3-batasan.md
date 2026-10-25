@@ -2,7 +2,7 @@ Penanggung jawab: Amar Farid A Toloa
 
 # A3. Batasan Sistem
 
-Tabel 2.2 memuat 2 batasan untuk tiap kategori (teknologi, bisnis, operasional), disertai dampaknya
+Tabel 2.3 memuat 2 batasan untuk tiap kategori (teknologi, bisnis, operasional), disertai dampaknya
 | No | Kategori | Batasan Sistem | Dampak |
 |:--:|:---|:---|:---|
 | 1 | **Teknologi** | Sistem harus terintegrasi dengan layanan Single Sign-On (SSO) universitas yang sudah ada menggunakan protokol OAuth 2.0 / SAML. | Tim pengembang tidak dapat membangun sistem autentikasi mandiri dari awal dan harus menyesuaikan alur login dengan infrastruktur keamanan pusat universitas. |

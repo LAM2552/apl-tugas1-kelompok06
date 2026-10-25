@@ -15,7 +15,7 @@ Konteks & Keputusan Arsitektur (Pertemuan 5) serta Karakteristik Arsitektur & At
 |---|---|---|---|---|
 | 1 | 13020240299 | RAFSYANJANI EFFENDY | @rafsyaraptutu-dev |  |
 | 2 | 13020240339 | AHMAD ANDIRA ALAM  | @LAM2552 | A1-A2 |
-| 3 | 13020240287 | AMAR FARID A TOLOA | @amaraf5977-dot |  |
+| 3 | 13020240287 | AMAR FARID A TOLOA | @amaraf5977-dot | A3-A4 |
 | 4 | 13020240190 | MUH. AIDIL | @aidilresse-cmyk | B1-B5 |
 | 5 | 13020240081 | A.MUHAMMAD ADITYA IRAWAN | @Adit16Umi | |
 

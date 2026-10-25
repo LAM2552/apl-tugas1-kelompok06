@@ -1,7 +1,8 @@
+Penanggung jawab: Ahmad Andira Alam
 # BAB I. Pendahuluan
 
 <!-- Gambaran subsistem dan layanan inti yang ditugaskan, ruang lingkup, dan sumber data. -->
-<!-- Penanggung jawab: [nama] -->
+<!-- Penanggung jawab: [ALam] -->
 
 ## 1.1 Gambaran layanan inti
 Subsistem _Academic Management_ merupakan bagian dari sistem informasi yang mengelola layanan magang dan studi independen bersertifikat (MSIB) di lingkungan, Universitas Muslim Indonesia. Layanan inti yang ditugaskan mencakup lima fungsi utama:

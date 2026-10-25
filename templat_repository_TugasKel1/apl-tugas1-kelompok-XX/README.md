@@ -13,7 +13,7 @@ Konteks & Keputusan Arsitektur (Pertemuan 5) serta Karakteristik Arsitektur & At
 
 | No | Stambuk | Nama | Akun GitHub | Kode yang dikerjakan |
 |---|---|---|---|---|
-| 1 | 13020240299 | RAFSYANJANI EFFENDY | @rafsyaraptutu-dev |  |
+| 1 | 13020240299 | RAFSYANJANI EFFENDY | @rafsyaraptutu-dev | B2-B4 |
 | 2 | 13020240339 | AHMAD ANDIRA ALAM  | @LAM2552 | A1-A2 |
 | 3 | 13020240287 | AMAR FARID A TOLOA | @amaraf5977-dot | A3-A4 |
 | 4 | 13020240190 | MUH. AIDIL | @aidilresse-cmyk | B1-B5 |
@@ -32,9 +32,9 @@ Status: Belum / Draf / Selesai. Perbarui tabel ini setiap ada perubahan.
 | A4 | laporan/A4-asr.md | @amaraf5977-dot | Selesai |
 | A5 | laporan/A5-keputusan-arsitektur.md dan adr/ | | Belum |
 | B1 | laporan/B1-karakteristik.md | @aidilresse-cmyk | Selesai |
-| B2 | laporan/B2-atribut-terukur.md | | Belum |
+| B2 | laporan/B2-atribut-terukur.md |rafsyaraptutu-dev | Selesai |
 | B3 | laporan/B3-tiga-struktur.md dan diagram/ | | Belum |
-| B4 | laporan/B4-iso-25010.md | | Belum |
+| B4 | laporan/B4-iso-25010.md |rafsyaraptutu-dev | Selesai |
 | B5 | laporan/B5-trade-off.md | @aidilresse-cmyk | Selesai |
 | BAB IV | laporan/BAB4-penutup.md | | Belum |
 | Pustaka | laporan/daftar-pustaka.md | | Belum |

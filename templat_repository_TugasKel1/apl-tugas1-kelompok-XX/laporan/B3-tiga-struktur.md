@@ -1,7 +1,6 @@
 Penanggung jawab : A.Muhammad Aditya Irawan
 # B3. Tiga Struktur Desain
 
-Dokumen ini menjelaskan subsistem Academic Management berdasarkan tiga sudut pandang (*view structures*):
 
 ## 1. Module View Structure (Struktur Modul)
 Menjelaskan bagaimana kode dan modul perangkat lunak diorganisasikan secara logis.

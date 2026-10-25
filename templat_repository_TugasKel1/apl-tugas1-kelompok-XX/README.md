@@ -28,8 +28,8 @@ Status: Belum / Draf / Selesai. Perbarui tabel ini setiap ada perubahan.
 | BAB I | laporan/BAB1-pendahuluan.md | @LAM2552 | Selesai |
 | A1 | laporan/A1-konteks-arsitektur.md | @LAM2552 | Selesai |
 | A2 | laporan/A2-stakeholder.md | @LAM2552 | Selesai |
-| A3 | laporan/A3-batasan.md | | Belum |
-| A4 | laporan/A4-asr.md | | Belum |
+| A3 | laporan/A3-batasan.md | @amaraf5977-dot | Selesai |
+| A4 | laporan/A4-asr.md | @amaraf5977-dot | Selesai |
 | A5 | laporan/A5-keputusan-arsitektur.md dan adr/ | | Belum |
 | B1 | laporan/B1-karakteristik.md | @aidilresse-cmyk | Selesai |
 | B2 | laporan/B2-atribut-terukur.md | | Belum |

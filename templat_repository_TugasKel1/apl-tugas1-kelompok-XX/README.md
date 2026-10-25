@@ -17,7 +17,7 @@ Konteks & Keputusan Arsitektur (Pertemuan 5) serta Karakteristik Arsitektur & At
 | 2 | 13020240339 | AHMAD ANDIRA ALAM  | @LAM2552 | A1-A2 |
 | 3 | 13020240287 | AMAR FARID A TOLOA | @amaraf5977-dot | A3-A4 |
 | 4 | 13020240190 | MUH. AIDIL | @aidilresse-cmyk | B1-B5 |
-| 5 | 13020240081 | A.MUHAMMAD ADITYA IRAWAN | @Adit16Umi | |
+| 5 | 13020240081 | A.MUHAMMAD ADITYA IRAWAN | @Adit16Umi | A5-B3 |
 
 ## Peta berkas dan penanggung jawab
 
@@ -30,10 +30,10 @@ Status: Belum / Draf / Selesai. Perbarui tabel ini setiap ada perubahan.
 | A2 | laporan/A2-stakeholder.md | @LAM2552 | Selesai |
 | A3 | laporan/A3-batasan.md | @amaraf5977-dot | Selesai |
 | A4 | laporan/A4-asr.md | @amaraf5977-dot | Selesai |
-| A5 | laporan/A5-keputusan-arsitektur.md dan adr/ | | Belum |
+| A5 | laporan/A5-keputusan-arsitektur.md dan adr/ | @Adit16Umi | Selesai |
 | B1 | laporan/B1-karakteristik.md | @aidilresse-cmyk | Selesai |
 | B2 | laporan/B2-atribut-terukur.md |@rafsyaraptutu-dev | Selesai |
-| B3 | laporan/B3-tiga-struktur.md dan diagram/ | | Belum |
+| B3 | laporan/B3-tiga-struktur.md dan diagram/ | @Adit16Umi | Selesai |
 | B4 | laporan/B4-iso-25010.md |@rafsyaraptutu-dev | Selesai |
 | B5 | laporan/B5-trade-off.md | @aidilresse-cmyk | Selesai |
 | BAB IV | laporan/BAB4-penutup.md | | Belum |

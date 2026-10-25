@@ -32,9 +32,9 @@ Status: Belum / Draf / Selesai. Perbarui tabel ini setiap ada perubahan.
 | A4 | laporan/A4-asr.md | @amaraf5977-dot | Selesai |
 | A5 | laporan/A5-keputusan-arsitektur.md dan adr/ | | Belum |
 | B1 | laporan/B1-karakteristik.md | @aidilresse-cmyk | Selesai |
-| B2 | laporan/B2-atribut-terukur.md |rafsyaraptutu-dev | Selesai |
+| B2 | laporan/B2-atribut-terukur.md |@rafsyaraptutu-dev | Selesai |
 | B3 | laporan/B3-tiga-struktur.md dan diagram/ | | Belum |
-| B4 | laporan/B4-iso-25010.md |rafsyaraptutu-dev | Selesai |
+| B4 | laporan/B4-iso-25010.md |@rafsyaraptutu-dev | Selesai |
 | B5 | laporan/B5-trade-off.md | @aidilresse-cmyk | Selesai |
 | BAB IV | laporan/BAB4-penutup.md | | Belum |
 | Pustaka | laporan/daftar-pustaka.md | | Belum |

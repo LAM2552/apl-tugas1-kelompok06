@@ -1,33 +1,31 @@
 Penanggung jawab : A.Muhammad Aditya Irawan
-# B3. Tiga Struktur Desain
 
+# B3. Tiga Struktur Arsitektur
 
-## 1. Module View Structure (Struktur Modul)
-Menjelaskan bagaimana kode dan modul perangkat lunak diorganisasikan secara logis.
-* **Layered Architecture Pattern:**
-  * **Presentation Layer:** Antarmuka berbasis web/mobile untuk Mahasiswa, Dosen Pembimbing, Koordinator, dan Pembimbing Lapangan.
-  * **Application / Business Logic Layer:** Modul Pendaftaran, Penempatan Mitra, Logbook, Bimbingan, dan Penilaian.
-  * **Data Access Layer:** Service layer yang menangani query ke database dan komunikasi API ke sistem induk UMI.
+## 1. Struktur Modul (Module Structure)
+Struktur modul menggambarkan bagaimana sistem didekomposisi menjadi unit-unit unit kode atau modul fungsional yang lebih kecil berdasarkan domain layanannya.
 
-## 2. Component-and-Connector (C&C) View Structure (Struktur Komponen & Konektor)
-Menjelaskan elemen-elemen sistem saat berjalan (*runtime*) dan cara mereka berinteraksi.
-* **Komponen Utama:**
-  * **API Gateway:** Pintu masuk tunggal yang menangani autentikasi/otorisasi request.
-  * **Academic Management Core Services:** 
-    * *Enrollment Service* (Pendaftaran)
-    * *Placement Service* (Penempatan Mitra)
-    * *Logbook Service* (Pencatatan harian & bukti)
-    * *Mentorship Service* (Bimbingan & penjadwalan)
-    * *Grading Service* (Penilaian & rekapsulasi SKS)
-  * **External Services:** Sistem Autentikasi Induk & Database Akademik UMI.
-* **Konektor:** REST API (HTTP/HTTPS) dan JSON Web Token (JWT) untuk pengiriman pesan antar-komponen.
+* **Modul Pendaftaran & Seleksi**: Bertanggung jawab atas proses pendaftaran mahasiswa, pengisian berkas persyaratan, dan seleksi awal.
+* **Modul Penempatan Mitra**: Mengelola data mitra industri, kuota posisi magang, serta proses *matching* atau penempatan mahasiswa ke mitra.
+* **Modul Aktivitas & Logbook**: Menangani pencatatan harian/mingguan kegiatan mahasiswa (*logbook*) serta catatan bimbingan dengan dosen/mentor industri.
+* **Modul Penilaian & Konversi**: Mengelola komponen penilaian dari mentor industri dan dosen pembimbing, serta rekapitulasi nilai akhir magang.
 
-## 3. Allocation View Structure (Struktur Alokasi)
-Menjelaskan pemetaan komponen perangkat lunak ke infrastruktur fisik/lingkungan eksekusi.
-* **Deployment & Hardware Allocation:**
-  * **Web Application Server:** Di-deploy dalam kontainer (Docker/Kubernetes) untuk kemudahan *scaling*.
-  * **Database Cluster:** Database Relasional (PostgreSQL/MySQL) di-host secara terpisah untuk keandalan data.
-  * **Object Storage:** Digunakan khusus menyimpan dokumen pendaftaran dan file bukti logbook.
+## 2. Struktur Komponen dan Konektor (Component-and-Connector Structure)
+Struktur ini menunjukkan aspek runtime sistem, yaitu bagaimana komponen-komponen perangkat lunak berinteraksi satu sama lain saat aplikasi sedang berjalan.
+
+* **Frontend Client (UI Layer)**: Antarmuka berbasis web/mobile yang diakses oleh mahasiswa, dosen, dan mitra. Berkomunikasi menggunakan protokol HTTP/REST.
+* **API Gateway / Router**: Titik masuk tunggal (*single entry point*) yang menerima seluruh permintaan dari client, melakukan verifikasi token JWT, dan merutekan ke layanan yang sesuai.
+* **Core Service Layer (Backend)**: Kumpulan layanan bisnis (Service MSIB) yang memproses logika pendaftaran, manajemen logbook, hingga kalkulasi penilaian.
+* **Database & Storage Server**: Komponen penyimpanan data terstruktur (PostgreSQL) untuk transaksi utama dan *Object Storage* untuk dokumen laporan serta lampiran logbook.
+
+## 3. Struktur Alokasi (Allocation Structure)
+Struktur alokasi memetakan elemen-elemen software ke lingkungan eksternal (perangkat keras, tim pengembang, atau infrastruktur jaringan).
+
+* **Alokasi Perangkat Keras (Deployment Environment)**: 
+  * Aplikasi Backend dideploy ke dalam *Cloud Container* (menggunakan Docker/Kubernetes) untuk memastikan ketersediaan layanan yang tinggi (*high availability*).
+  * Basis data berjalan pada server *managed database* terpisah yang memiliki sistem *backup* berkala.
+* **Alokasi Tim Pengembang (Team Allocation)**: 
+  * Tim dibagi berdasarkan modul fungsional (misal: Sub-tim pengembang modul pendaftaran & penempatan, Sub-tim pengembang logbook & penilaian, serta Tim infrastruktur/DevOps).
 <!-- Penanggung jawab: [nama] -->
 <!-- Yang diminta: Struktur modul, struktur komponen dan konektor (C&C), dan struktur alokasi untuk subsistem yang sama (gambar dari folder diagram/). -->
 <!-- Hapus komentar ini setelah bagian selesai. -->

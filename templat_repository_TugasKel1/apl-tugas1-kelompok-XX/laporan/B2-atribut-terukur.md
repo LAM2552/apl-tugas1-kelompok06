@@ -1,22 +1,25 @@
 # B2. Atribut Kualitas yang Terukur
 
+**Penanggung jawab:** Ahmad Andira Alam
 
-**Penanggung jawab:** Ahmad Andira Alam[cite: 1]
-
-Berikut adalah 3 karakteristik pendorong (*Quality Attributes*) untuk subsistem **Academic Management** (Layanan magang dan studi independen/MSIB)[cite: 1]:
+Berikut adalah 3 karakteristik pendorong (*Quality Attributes*) untuk subsistem **Layanan Beasiswa Universitas Muslim Indonesia (UMI) Makassar**. Layanan beasiswa UMI merupakan salah satu layanan yang tersedia bagi mahasiswa dan mencakup proses pendaftaran serta pengelolaan beasiswa.
 
 ### 1. Kinerja (*Performance*)
-* **Angka Target:** Waktu respons sistem (*response time*) maksimal 2 detik untuk memuat halaman pendaftaran dan pengisian logbook harian[cite: 1].
-* **Kondisi Pengukuran:** Sistem sedang diakses dalam kondisi beban puncak (*peak load*), misalnya saat tenggat waktu pendaftaran program atau penutupan penilaian[cite: 1] dengan ribuan mahasiswa mengakses secara bersamaan (*concurrent users*).
-* **Cara Mengukur:** Menggunakan perangkat lunak *Load Testing* (seperti Apache JMeter atau k6) untuk menyimulasikan lonjakan *traffic* (ribuan *request* per detik) dan mencatat rata-rata waktu respons server.
+
+* **Angka Target:** Waktu respons sistem maksimal **2 detik** saat mahasiswa melakukan pendaftaran, mengunggah berkas, dan melihat informasi beasiswa.
+* **Kondisi Pengukuran:** Sistem diuji ketika banyak mahasiswa mengakses layanan beasiswa secara bersamaan, terutama pada masa pendaftaran.
+* **Cara Mengukur:** Menggunakan *Load Testing* seperti Apache JMeter atau k6 untuk mengetahui waktu respons sistem ketika menerima banyak pengguna.
 
 ### 2. Ketersediaan (*Availability*)
-* **Angka Target:** Sistem memiliki persentase ketersediaan (*uptime*) minimal 99,9% (toleransi *downtime* maksimal sekitar 43 menit per bulan).
-* **Kondisi Pengukuran:** Sistem beroperasi normal pada *production environment* selama periode aktif MSIB (terutama saat masa pengisian logbook harian dan bimbingan)[cite: 1].
-* **Cara Mengukur:** Menggunakan *Automated Monitoring Tools* (seperti UptimeRobot, AWS CloudWatch, atau Prometheus) yang mengirimkan *ping* atau permintaan *health-check* ke server setiap 1 menit secara terus-menerus.
+
+* **Angka Target:** Sistem memiliki tingkat ketersediaan minimal **99,9%** selama periode layanan beasiswa.
+* **Kondisi Pengukuran:** Sistem dipantau selama proses pendaftaran, pengumpulan berkas, seleksi, sampai pengumuman hasil beasiswa.
+* **Cara Mengukur:** Menggunakan sistem monitoring untuk mengecek apakah halaman dan layanan beasiswa dapat diakses secara berkala serta mencatat apabila terjadi *downtime*.
 
 ### 3. Keamanan (*Security*)
-* **Angka Target:** 100% data logbook dan penilaian[cite: 1] terlindungi dari akses pihak yang tidak berwenang (0 insiden kebocoran privasi atau perubahan nilai tanpa izin).
-* **Kondisi Pengukuran:** Ada percobaan akses (*request*) ke *endpoint* pengubahan nilai atau pembacaan logbook dari akun/peran (*role*) yang tidak memiliki hak (misalnya mahasiswa lain mencoba melihat nilai temannya).
-* **Cara Mengukur:** Menjalankan *Penetration Testing* secara berkala dan menggunakan *Automated Vulnerability Scanner* (seperti OWASP ZAP) untuk menguji sistem otorisasi dan memastikan tidak ada celah *Broken Access Control*.
 
+* **Angka Target:** **100% data pendaftar dan berkas beasiswa** hanya dapat diakses oleh pihak yang memiliki hak akses.
+* **Kondisi Pengukuran:** Dilakukan pengujian dengan mencoba mengakses data atau berkas mahasiswa menggunakan akun yang tidak memiliki izin.
+* **Cara Mengukur:** Melakukan *security testing* menggunakan alat seperti OWASP ZAP untuk menguji login, hak akses, pengunggahan berkas, dan perlindungan data mahasiswa.
+
+**Catatan:** Angka target seperti 2 detik dan 99,9% merupakan **target kualitas yang digunakan dalam analisis tugas**, bukan standar resmi yang ditetapkan oleh UMI.

@@ -5,45 +5,30 @@ Penanggung jawab: Ahmad Andira Alam
 <!-- Penanggung jawab: [ALam] -->
 
 ## 1.1 Gambaran layanan inti
-Subsistem _Academic Management_ merupakan bagian dari sistem informasi yang mengelola layanan magang dan studi independen bersertifikat (MSIB) di lingkungan, Universitas Muslim Indonesia. Layanan inti yang ditugaskan mencakup lima fungsi utama:
+Subsistem layanan beasiswa merupakan sebuah platform perangkat lunak terintegrasi yang dirancang untuk mengelola seluruh siklus administratif program beasiswa. Layanan inti yang ditugaskan dalam subsistem ini meliputi:
 
-1.    **Pendaftaran**: mahasiswa mendaftar program MSIB, mengunggah berkas persyaratan, dan memperoleh verifikasi dari koordinator program.
+1.    **Pendaftaran**
 
-2.    **Penempatan mitra**: pencocokan dan pencatatan penempatan mahasiswa pada mitra industri atau lembaga penyelenggara.
+Fasilitas bagi calon penerima beasiswa untuk membuat akun dan mengisi formulir data diri.
 
-3.    **Logbook**: pencatatan kegiatan harian atau mingguan mahasiswa selama program, beserta bukti kegiatan.
+2.    **Unggah Berkas**
 
-4.    **Bimbingan**: penjadwalan dan pencatatan sesi bimbingan antara mahasiswa, dosen pembimbing, dan pembimbing lapangan.
+Modul penyimpanan dokumen digital (dokumen persyaratan, transkrip, sertifikat) secara aman.
 
-5.    **Penilaian**: pengumpulan nilai dari dosen pembimbing dan mitra, serta rekapitulasi hasil akhir untuk konversi SKS.
+3.    **Seleksi dan Penilaian Berkas**
 
-Pengguna utama subsistem ini adalah mahasiswa peserta, dosen pembimbing, koordinator program, dan pembimbing lapangan dari mitra. Subsistem ini juga berinteraksi dengan layanan lain di sistem induk, misalnya autentikasi pengguna dan data akademik mahasiswa. Layanan ini penting secara arsitektural karena melibatkan banyak peran dengan hak akses berbeda, data bernilai akademik yang harus akurat, dan beban yang berfluktuasi mengikuti kalender program.
+Antarmuka khusus bagi tim _reviewer_ atau panitia untuk memverifikasi keabsahan dokumen dan memberikan penilaian (skoring) berdasarkan kriteria yang ditetapkan.
+
+4.    **Pengumuman**
+
+Fitur distribusi informasi hasil seleksi secara serentak kepada para pendaftar melalui _dashboard_ pengguna maupun notifikasi email.
 
 ## 1.2 Ruang lingkup (3-5 kasus penggunaan)
-Pembahasan dalam laporan ini dibatasi pada hal berikut.
-
-Termasuk dalam lingkup:
-
--       Alur pendaftaran, penempatan mitra, logbook, bimbingan, dan penilaian pada program MSIB.
-
--       Analisis konteks arsitektur dan stakeholder dari subsistem tersebut (Bab II).
-
--       Hubungan subsistem dengan layanan lain hanya sebatas antarmuka dan ketergantungan yang memengaruhi keputusan arsitektur.
-
-Di luar lingkup:
-
--       Implementasi kode dan pengujian perangkat lunak secara menyeluruh.
-
--       Layanan di luar subsistem ini (misalnya keuangan dan administrasi umum kampus) serta program magang di luar skema MSIB.
-
--       Proses internal di sisi mitra industri atau penyelenggara pusat di luar interaksi dengan subsistem ini.
+Ruang lingkup arsitektur sistem ini mencakup perancangan antarmuka pengguna (web-based), logika bisnis untuk alur pendaftaran dan validasi otomatis, serta pengelolaan basis data relasional dan penyimpanan objek (berkas). Sistem ini dibatasi pada proses seleksi administrasi dan akademik. Arsitektur difokuskan untuk menangani _traffic_ tinggi yang bersifat musiman (menjelang _deadline_ pendaftaran).
 
 ## 1.3 Sumber data
 <!-- Pengalaman pengguna, informasi publik, wawancara responden. Tanpa identitas pribadi. -->
-Data dan informasi dalam laporan ini dikumpulkan beberapa sumber.
+-	Observasi terhadap sistem layanan pendaftaran beasiswa. 
+-	Wawancara dengan staf bagian kemahasiswaan selaku pengelola program beasiswa (Manajer Bisnis) dan mahasiswa selaku pengguna akhir sistem.
+-	Studi literatur dari buku Software Architecture in Practice (Bass et al.) dan Fundamentals of Software Architecture (Richards & Ford) terkait karakteristik pendorong arsitektur.
 
--       Pengalaman sebagai pengguna: mencoba sendiri layanannya (SIAKAD, UMI-Kalam).
-
-<img width="940" height="513" alt="image" src="https://github.com/user-attachments/assets/4e8d1c83-98d2-4817-b658-bc18da0a0520" />
-
-  Hanya terdapat page yang menjelaskan Magang & Studi Independen Bersertifikat (MSIB) di Kalam UMI.

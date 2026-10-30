@@ -4,9 +4,9 @@ Konteks & Keputusan Arsitektur (Pertemuan 5) serta Karakteristik Arsitektur & At
 
 | Keterangan | Isi |
 |---|---|
-| Kelompok | Bagian [III] – Kelompok [6] |
-| Subsistem | Academic Management |
-| Layanan inti | Layanan magang dan studi independen (MSIB): pendaftaran, penempatan mitra, logbook, bimbingan, dan penilaian |
+| Kelompok | Bagian [III] – Kelompok [5] |
+| Subsistem | Assignment & Assessment |
+| Layanan inti | Layanan beasiswa: pendaftaran, unggah berkas, seleksi dan penilaian berkas, dan pengumuman |
 | Perwakilan kelompok | Ahmad Andira Alam, 13020240339 |
 
 ## Anggota

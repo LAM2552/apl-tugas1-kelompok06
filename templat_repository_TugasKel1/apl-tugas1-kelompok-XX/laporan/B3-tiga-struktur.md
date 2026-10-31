@@ -6,11 +6,11 @@ Penanggung jawab : A.Muhammad Aditya Irawan
 
 **Deskripsi:** Menggambarkan organisasi elemen kode, modul, dan dependensi logis dari sistem.
 * **Elemen Modul Utama:**
-  1. `Registration Module`: Mengelola alur formulir pendaftaran beasiswa dan validasi data diri pemohon.
-  2. `Document Service Module`: Mengelola kompresi, penyimpanan, dan verifikasi berkas persyaratan.
-  3. `Assessment & Scoring Module`: Mengelola *scoring rubric*, alokasi *reviewer*, dan perhitungan nilai akhir seleksi.
-  4. `Announcement Module`: Mempublikasikan status kelulusan peserta.
-  5. `Shared Utilities Module`: Berisi fungsi validasi, *audit log*, dan keamanan dasar.
+  1. Registration Module: Mengelola alur formulir pendaftaran beasiswa dan validasi data diri pemohon.
+  2. Document Service Module: Mengelola kompresi, penyimpanan, dan verifikasi berkas persyaratan.
+  3. Assessment & Scoring Module: Mengelola *scoring rubric*, alokasi *reviewer*, dan perhitungan nilai akhir seleksi.
+  4. Announcement Module: Mempublikasikan status kelulusan peserta.
+  5. Shared Utilities Module: Berisi fungsi validasi, *audit log*, dan keamanan dasar.
 * **Hubungan (Relationships):** Modul `Assessment` dan `Registration` mengimpor `Shared Utilities`; modul `Announcement` membaca luaran dari `Assessment Module`.
 
 

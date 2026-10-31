@@ -1,7 +1,9 @@
 Penanggung jawab : Ahmad Andira Alam
-## A2. Stakeholder
+## A2. Stakeholder dan Peta Power/Interest
 
-Tabel yang mendefinisikan minimal 6 stakeholder yang mewakili 5 kelompok utama yang berinteraksi dengan sistem layanan beasiswa
+**1.** Stakeholder Register 
+
+Tabel yang mendefinisikan minimal 6 stakeholder yang mewakili 5 kelompok utama yang berinteraksi dengan sistem layanan beasiswa.
 | **Stakeholder**          | **Kelompok**    | **Kebutuhan dan ekspektasi**                                                      | **Power / interest** | **Strategi**     |
 | ------------------------ | --------------- | --------------------------------------------------------------------------------- | -------------------- | ---------------- |
 | Mahasiswa                | Pengguna akhir  | Unggah berkas cepat; sistem stabil saat _deadline_; mudah dipakai                 | Rendah / tinggi      | _Keep informed_  |
@@ -11,4 +13,13 @@ Tabel yang mendefinisikan minimal 6 stakeholder yang mewakili 5 kelompok utama y
 | Direktur kemahasiswaan   | Manajer bisnis  | Seleksi tepat waktu; laporan pendaftar akurat; data pelamar aman                  | Tinggi / tinggi      | _Manage closely_ |
 | Penyedia _cloud storage_ | Pihak eksternal | Pemanggilan API sesuai standar; tidak melampaui batas _rate limit_                | Rendah / rendah      | _Monitor_        |
 
-_Tabel 2.1 Analisis empat konteks arsitektur_
+_Tabel 2.2 Analisis empat konteks arsitektur_
+
+
+
+**2.** Peta Power Interest
+
+<img width="940" height="719" alt="image" src="https://github.com/user-attachments/assets/9c5ed4e2-d30e-45fa-a71c-ea54a8c0dec8" />
+
+
+_2.3 Gambar Peta Power Interest_

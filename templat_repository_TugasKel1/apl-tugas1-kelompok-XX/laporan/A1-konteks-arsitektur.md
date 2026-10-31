@@ -2,7 +2,7 @@ Penanggung jawab : Ahmad Andira Alam
 
 ## A1. Analisis Empat Konteks Arsitektur
 
-Tabel analisis empat konteks arsitektur terhadap layanan inti beasiswa yang ditugaskan.
+Berikut adalah tabel analisis empat konteks arsitektur terhadap layanan inti beasiswa.
 
 | **Konteks**         | **Kondisi subsistem Academic Management**                                                                                                                                                                                                                 |
 | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

@@ -1,39 +1,46 @@
 Penanggung Jawab: A.Muhammad Aditya Irawan
-# A5. Keputusan Arsitektur (Architecture Decisions)
+# A5 - Keputusan Arsitektur (Architecture Decision Records)
 
-## 1. Latar Belakang & Konteks Keputusan
-Subsistem **Assignment & Assessment** mengelola proses kritis dalam sistem beasiswa, mulai dari penerimaan berkas pendaftaran, verifikasi, hingga proses seleksi/penilaian oleh tim penilai dan pengumuman hasil. Keputusan arsitektur ini diambil untuk memastikan keandalan, integritas data, efisiensi pemrosesan berkas, dan transparansi penilaian.
+## 1. Ringkasan Daftar Keputusan Arsitektur (ADR)
 
----
+| Kode ADR | Judul Keputusan | Status | Tanggal | Pengambil Keputusan |
+| :--- | :--- | :--- | :--- | :--- |
+| **ADR-001** | Implementasi Load Balancing dan Caching Berbasis Cloud | Diterima | 31-10-2026 | Ahmad Andira Alam[cite: 4] |
+| **ADR-002** | Perlindungan Data Pribadi Sensitif dan Kode Modular | Diterima | 31-10-2026 | Ahmad Andira Alam[cite: 4] |
 
-## 2. ADR (Architecture Decision Records)
+## 2. Detail Keputusan Arsitektur Utama
 
-### ADR-01: Penerapan Microservices Architecture pada Subsistem Assessment
-* **Status:** Accepted
-* **Konteks:** Pemrosesan berkas pendaftaran dan kalkulasi skor seleksi memerlukan daya komputasi tinggi pada periode tertentu (misal mendekati batas akhir pendaftaran), sementara fitur pengumuman hanya membaca data secara masif.
-* **Keputusan:** Memisah fungsi pendaftaran/berkas, seleksi/penilaian, dan pengumuman menjadi layanan independen (*Microservices*).
-* **Konsekuensi:** 
-  * (+) *Scalability* independen sesuai kebutuhan trafik layanan tertentu.
-  * (+) Isolasi kegagalan (*fault tolerance*).
-  * (-) Kompleksitas manajemen infrastruktur dan komunikasi antarlayanan meningkat.
+### 2.1 ADR-001: Implementasi Load Balancing dan Caching Berbasis Cloud
+* **Status:** Diterima
+* **Tanggal:** 31-10-2026
+* **Pengambil Keputusan:** Ahmad Andira Alam[cite: 4]
+* **Konteks & Masalah (Context):**
+  Sistem harus mampu menangani lonjakan akses tinggi (*high concurrency*) saat hari-hari terakhir pendaftaran beasiswa dan pengumuman hasil seleksi[cite: 4, 5]. Hal ini sejalan dengan konteks teknis sistem yang membutuhkan elastisitas serta tuntutan mahasiswa agar server tetap stabil 100% saat tenggat waktu (*deadline*).
+* **Keputusan (Decision):**
+  Kami akan menerapkan kapasitas server berbasis *cloud* dengan menggunakan mekanisme *load balancing* dan *caching*.
+* **Dampak & Konsekuensi (Consequences):**
+  * **Dampak Positif:** Situs tidak mengalami *down* atau kelambatan akses saat diserbu ribuan pendaftar secara bersamaan.
+  * **Trade-off:** Biaya langganan infrastruktur *cloud* akan meningkat.
+* **Kepatuhan (Compliance):**
+  Melakukan pengujian beban (*load testing*) sebelum perilisan serta pemantauan otomatis (*monitoring*) pada metrik kepadatan trafik server.
 
----
+### 2.2 ADR-002: Perlindungan Data Pribadi Sensitif dan Struktur Kode Modular
+* **Status:** Diterima
+* **Tanggal:** 31-10-2026
+* **Pengambil Keputusan:** Ahmad Andira Alam[cite: 4]
+* **Konteks & Masalah (Context):**
+  Sistem wajib mengamankan data pribadi sensitif (seperti KTP dan slip gaji orang tua) dengan perlindungan ketat. Selain itu, alur seleksi harus menggunakan struktur kode modular agar mudah disesuaikan jika kriteria penilaian berubah di masa depan[cite: 5]. Ini merespons kebutuhan mahasiswa atas privasi data serta standar rekayasa perangkat lunak dari tim pengembang.
+* **Keputusan (Decision):**
+  Kami akan merancang keamanan berlapis yang meliputi enkripsi data *at rest* maupun *in transit* beserta pembatasan akses (*Role-Based Access Control* / RBAC), serta melakukan pemisahan logika bisnis penilaian dari antarmuka pengguna (*user interface*).
+* **Dampak & Konsekuensi (Consequences):**
+  * **Dampak Positif:** Kerahasiaan data pribadi pendaftar terjamin, manipulasi dokumen dapat dicegah, dan pemeliharaan modul sistem dapat dilakukan tanpa harus merombak seluruh arsitektur aplikasi.
+  * **Trade-off:** Tingkat kerumitan pada tahap pengembangan awal akan bertambah.
+* **Kepatuhan (Compliance):**
+  Memberlakukan tinjauan kode (*code review*) yang ketat pada setiap modul penilaian dan menerapkan pengujian keamanan (*security testing*) secara berulang.
 
-### ADR-02: Penggunaan Object Storage Asinkron untuk Unggah Berkas
-* **Status:** Accepted
-* **Konteks:** Berkas pendaftaran beasiswa (PDF, KTP, Transkrip) berukuran besar dan diunggah secara simultan oleh jutaan calon penerima beasiswa.
-* **Keputusan:** Menggunakan *Object Storage* (seperti MinIO / Amazon S3) yang dihubungkan melalui *Presigned URL* dan *Message Broker* (RabbitMQ / Kafka) untuk pemrosesan validasi latar belakang (*background job*).
-* **Konsekuensi:**
-  * (+) Mengurangi beban *web server* utama dan mempercepat waktu respon (*low latency*).
-  * (+) Menjamin keamanan penyimpanan berkas pendaftaran.
-  * (-) Memerlukan strategi konsistensi data secara asinkron (*eventual consistency*).
+## 3. Pemetaan Keputusan ke Atribut Kualitas (Quality Attributes)
 
----
-
-### ADR-03: Implementasi RBAC (Role-Based Access Control) untuk Penilaian Berkas
-* **Status:** Accepted
-* **Konteks:** Penilaian dan seleksi berkas beasiswa memerlukan kerahasiaan tinggi dan hanya boleh diakses oleh reviewer/assessor yang berhak.
-* **Keputusan:** Menggunakan skema RBAC ketat berbasis *JWT-based Authentication & Authorization* untuk membatasi akses hak pilih berkas sesuai wilayah atau kriteria penilai.
-* **Konsekuensi:**
-  * (+) Memastikan privasi data pemohon beasiswa dan akuntabilitas nilai seleksi.
-  * (-) Memerlukan sinkronisasi peran (*roles*) yang konsisten pada semua mikroservis.
+| Kode ADR | Atribut Kualitas Utama | Atribut Kualitas Sekunder |
+| :--- | :--- | :--- |
+| **ADR-001** | Ketersediaan (*Availability*) & Skalabilitas | Efisiensi Kinerja (*Performance Efficiency*) |
+| **ADR-002** | Keamanan (*Security*) | Modulartas & Pemeliharaan (*Maintainability*) |

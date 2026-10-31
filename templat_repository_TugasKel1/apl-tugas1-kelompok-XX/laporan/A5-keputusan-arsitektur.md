@@ -1,29 +1,39 @@
 Penanggung Jawab: A.Muhammad Aditya Irawan
 
-# A5. Keputusan Arsitektur
+# A5. Keputusan Arsitektur (Architecture Decisions)
 
-## 1. Pemilihan Gaya Arsitektur: Microservices vs Monolith Modular
-* **Keputusan**: Menggunakan pendekatan **Modular Monolith** pada tahap awal, dengan rancangan yang siap dipecah menjadi **Microservices** di masa depan.
-* **Alasan (Rationale)**: 
-  * Layanan MSIB memiliki modul yang erat kaitannya (pendaftaran, penempatan, logbook, penilaian). Monolith modular memudahkan pengelolaan transaksi data (seperti validasi kuota penempatan mitra dengan pendaftaran mahasiswa) tanpa kompleksitas komunikasi jaringan yang tinggi di awal.
-  * Memungkinkan tim untuk memisahkan domain logika kode dengan jelas per modul.
+## 1. Latar Belakang & Konteks Keputusan
+Subsistem **Assignment & Assessment** mengelola proses kritis dalam sistem beasiswa, mulai dari penerimaan berkas pendaftaran, verifikasi, hingga proses seleksi/penilaian oleh tim penilai dan pengumuman hasil. Keputusan arsitektur ini diambil untuk memastikan keandalan, integritas data, efisiensi pemrosesan berkas, dan transparansi penilaian.
 
-## 2. Strategi Pengelolaan Basis Data (Database Strategy)
-* **Keputusan**: Menggunakan basis data relasional (**PostgreSQL**).
-* **Alasan (Rationale)**: 
-  * Data akademik dan operasional MSIB (seperti relasi mahasiswa, dosen pembimbing, mitra industri, logbook, dan nilai) menuntut integritas data yang tinggi (*ACID compliance*).
-  * Relasi antar entitas (misalnya: satu mahasiswa memiliki banyak logbook dan satu dosen penilai) sangat optimal dikelola menggunakan *Relational Database Management System* (RDBMS).
+## 2. ADR (Architecture Decision Records)
 
-## 3. Mekanisme Autentikasi dan Otorisasi
-* **Keputusan**: Menggunakan **JSON Web Token (JWT)** dengan kontrol berbasis peran (*Role-Based Access Control - RBAC*).
-* **Alasan (Rationale)**: 
-  * Sistem MSIB melibatkan berbagai aktor dengan hak akses berbeda secara jelas, yaitu: Mahasiswa, Dosen Pembimbing, Mitra Industri, dan Admin Pusat.
-  * JWT bersifat *stateless*, sehingga memudahkan skalabilitas server saat terjadi lonjakan akses (misalnya saat periode pendaftaran serentak).
+### ADR-01: Penerapan Microservices Architecture pada Subsistem Assessment
+* **Status:** Accepted
+* **Konteks:** Pemrosesan berkas pendaftaran dan kalkulasi skor seleksi memerlukan daya komputasi tinggi pada periode tertentu (misal mendekati batas akhir pendaftaran), sementara fitur pengumuman hanya membaca data secara masif.
+* **Keputusan:** Memisah fungsi pendaftaran/berkas, seleksi/penilaian, dan pengumuman menjadi layanan independen (*Microservices*).
+* **Konsekuensi:** 
+  * (+) *Scalability* independen sesuai kebutuhan trafik layanan tertentu.
+  * (+) Isolasi kegagalan (*fault tolerance*).
+  * (-) Kompleksitas manajemen infrastruktur dan komunikasi antarlayanan meningkat.
 
-## 4. Pengelolaan Berkas Pendukung (Logbook & Dokumen Penilaian)
-* **Keputusan**: Menggunakan penyimpanan berbasis *Object Storage* (seperti AWS S3 atau MinIO) yang terpisah dari basis data utama.
-* **Alasan (Rationale)**: 
-  * Dokumen lampiran seperti laporan magang, sertifikat, dan bukti logbook berukuran besar. Menyimpannya langsung di database akan menurunkan performa kueri. Penyimpanan objek memberikan akses unduh/unggah yang lebih cepat dan aman.
+
+### ADR-02: Penggunaan Object Storage Asinkron untuk Unggah Berkas
+* **Status:** Accepted
+* **Konteks:** Berkas pendaftaran beasiswa (PDF, KTP, Transkrip) berukuran besar dan diunggah secara simultan oleh jutaan calon penerima beasiswa.
+* **Keputusan:** Menggunakan *Object Storage* (seperti MinIO / Amazon S3) yang dihubungkan melalui *Presigned URL* dan *Message Broker* (RabbitMQ / Kafka) untuk pemrosesan validasi latar belakang (*background job*).
+* **Konsekuensi:**
+  * (+) Mengurangi beban *web server* utama dan mempercepat waktu respon (*low latency*).
+  * (+) Menjamin keamanan penyimpanan berkas pendaftaran.
+  * (-) Memerlukan strategi konsistensi data secara asinkron (*eventual consistency*).
+
+### ADR-03: Implementasi RBAC (Role-Based Access Control) untuk Penilaian Berkas
+* **Status:** Accepted
+* **Konteks:** Penilaian dan seleksi berkas beasiswa memerlukan kerahasiaan tinggi dan hanya boleh diakses oleh reviewer/assessor yang berhak.
+* **Keputusan:** Menggunakan skema RBAC ketat berbasis *JWT-based Authentication & Authorization* untuk membatasi akses hak pilih berkas sesuai wilayah atau kriteria penilai.
+* **Konsekuensi:**
+  * (+) Memastikan privasi data pemohon beasiswa dan akuntabilitas nilai seleksi.
+  * (-) Memerlukan sinkronisasi peran (*roles*) yang konsisten pada semua mikroservis.
+ 
 <!-- Penanggung jawab: [nama] -->
 <!-- Yang diminta: Minimal 2 ADR (Title, Status, Context, Decision, Consequences, Compliance). Ringkasan di sini, ADR lengkap di folder adr/. -->
 <!-- Hapus komentar ini setelah bagian selesai. -->

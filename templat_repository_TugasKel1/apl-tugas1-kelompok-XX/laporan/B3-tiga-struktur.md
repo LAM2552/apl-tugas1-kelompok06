@@ -4,7 +4,6 @@ Penanggung jawab : A.Muhammad Aditya Irawan
 ## 1. Struktur Modul (Module Structure)
 Struktur modul menggambarkan bagaimana sistem didekomposisi menjadi unit-unit kode atau modul fungsional yang lebih kecil serta relasi ketergantungannya (*dependency*).
 
-* **Berkas Diagram:** `B3-struktur-modul.drawio` / `B3-struktur-modul.png`
 * **Penjelasan Modul Utama:**
   * **Modul Pendaftaran (`Auth & Registration Module`):** Mengelola data akun pengguna, validasi formulir data diri calon pendaftar beasiswa.
   * **Modul Manajemen Berkas (`File Storage & Management Module`):** Menangani proses *upload*, enkripsi, dan penyimpanan dokumen persyaratan (transkrip, sertifikat) secara aman.
@@ -16,7 +15,6 @@ Struktur modul menggambarkan bagaimana sistem didekomposisi menjadi unit-unit ko
 ## 2. Struktur C&C / Component & Connector (Runtime View)
 Struktur *Component & Connector* menunjukkan elemen-elemen runtime (komponen yang aktif saat sistem berjalan) dan bagaimana mereka saling berinteraksi melalui konektor komunikasi (seperti HTTP Request, gRPC, atau Event Bus).
 
-* **Berkas Diagram:** `B3-struktur-cc.drawio` / `B3-struktur-cc.png`[cite: 1]
 * **Penjelasan Alur Interaksi Runtime:**
   * **Client / Frontend (React App):** Berinteraksi langsung dengan *API Gateway*.
   * **API Gateway:** Bertindak sebagai titik masuk tunggal (*single entry point*) yang merutekan permintaan pengguna ke layanan mikro yang bersangkutan.
@@ -29,7 +27,6 @@ Struktur *Component & Connector* menunjukkan elemen-elemen runtime (komponen yan
 ## 3. Struktur Alokasi (Allocation Structure)
 Struktur alokasi memetakan elemen-elemen software (modul atau komponen) ke dalam unsur lingkungan eksternal seperti infrastruktur fisik, server, lingkungan deployment (Vercel/Cloud), maupun tim pengembang.
 
-* **Berkas Diagram:** `B3-struktur-alokasi.drawio` / `B3-struktur-alokasi.png`[cite: 1]
 * **Penjelasan Alokasi Infrastruktur:**
   * **Frontend Deployment:** Antarmuka berbasis web dideploy menggunakan platform **Vercel** yang terintegrasi dengan repositori GitHub[cite: 4].
   * **Backend & Microservices:** Ditempatkan pada server cloud terpusat (Docker Container / Cloud VM).

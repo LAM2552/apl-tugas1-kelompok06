@@ -29,6 +29,7 @@ Ruang lingkup arsitektur sistem ini mencakup perancangan antarmuka pengguna (web
 ## 1.3 Sumber data
 <!-- Pengalaman pengguna, informasi publik, wawancara responden. Tanpa identitas pribadi. -->
 -	Observasi terhadap sistem layanan pendaftaran beasiswa. 
--	Wawancara dengan staf bagian kemahasiswaan selaku pengelola program beasiswa (Manajer Bisnis) dan mahasiswa selaku pengguna akhir sistem.
+-	Wawancara melalui kuisioner dengan staf bagian kemahasiswaan selaku tim penilai (reviewer) dan mahasiswa selaku pengguna akhir sistem.
 -	Studi literatur dari buku Software Architecture in Practice (Bass et al.) dan Fundamentals of Software Architecture (Richards & Ford) terkait karakteristik pendorong arsitektur.
+
 

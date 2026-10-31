@@ -1,19 +1,39 @@
 Penanggung Jawab: A.Muhammad Aditya Irawan
-# A5 - Keputusan Arsitektur (Architecture Decision Records)
+# A5. Keputusan Arsitektur (Architecture Decisions)
 
-Dokumen ini berisi daftar ringkasan keputusan arsitektur utama yang telah disepakati dan diterapkan dalam pengembangan subsistem layanan beasiswa (*Assignment & Assessment*). Setiap keputusan dicatat secara terperinci menggunakan format *Architecture Decision Record* (ADR) pada direktori `adr/`.
-
----
-
-## Daftar Keputusan Arsitektur
-
-| Nomor ADR | Judul Keputusan | Status | Tanggal | Pengambil Keputusan |
-| :--- | :--- | :--- | :--- | :--- |
-| **ADR-001** | Pemilihan Arsitektur Berbasis Layanan Mikro (*Microservices*) Terdistribusi | Diterima | 31-10-2026[cite: 5] | Kelompok 5 |
-| **ADR-002** | Penggunaan Cloud Object Storage untuk Berkas Dokumen Persyaratan | Diterima[cite: 5] | 31-10-2026[cite: 5] | Kelompok 5 |
-| **ADR-003** | Penerapan Autentikasi Berbasis JWT (*JSON Web Token*) | Diterima[cite: 5] | 31-10-2026[cite: 5] | Kelompok 5 |
+## 1. Latar Belakang & Konteks Keputusan
+Subsistem **Assignment & Assessment** mengelola proses kritis dalam sistem beasiswa, mulai dari penerimaan berkas pendaftaran, verifikasi, hingga proses seleksi/penilaian oleh tim penilai dan pengumuman hasil. Keputusan arsitektur ini diambil untuk memastikan keandalan, integritas data, efisiensi pemrosesan berkas, dan transparansi penilaian.
 
 ---
 
-## Ringkasan Integrasi Keputusan
-Keputusan-keputusan di atas diambil untuk menjawab tantangan utama pada layanan beasiswa, khususnya dalam mengelola lonjakan trafik saat pendaftaran, keamanan data dokumen transkrip/sertifikat pendaftar, serta keandalan proses penilaian oleh *reviewer*.
+## 2. ADR (Architecture Decision Records)
+
+### ADR-01: Penerapan Microservices Architecture pada Subsistem Assessment
+* **Status:** Accepted
+* **Konteks:** Pemrosesan berkas pendaftaran dan kalkulasi skor seleksi memerlukan daya komputasi tinggi pada periode tertentu (misal mendekati batas akhir pendaftaran), sementara fitur pengumuman hanya membaca data secara masif.
+* **Keputusan:** Memisah fungsi pendaftaran/berkas, seleksi/penilaian, dan pengumuman menjadi layanan independen (*Microservices*).
+* **Konsekuensi:** 
+  * (+) *Scalability* independen sesuai kebutuhan trafik layanan tertentu.
+  * (+) Isolasi kegagalan (*fault tolerance*).
+  * (-) Kompleksitas manajemen infrastruktur dan komunikasi antarlayanan meningkat.
+
+---
+
+### ADR-02: Penggunaan Object Storage Asinkron untuk Unggah Berkas
+* **Status:** Accepted
+* **Konteks:** Berkas pendaftaran beasiswa (PDF, KTP, Transkrip) berukuran besar dan diunggah secara simultan oleh jutaan calon penerima beasiswa.
+* **Keputusan:** Menggunakan *Object Storage* (seperti MinIO / Amazon S3) yang dihubungkan melalui *Presigned URL* dan *Message Broker* (RabbitMQ / Kafka) untuk pemrosesan validasi latar belakang (*background job*).
+* **Konsekuensi:**
+  * (+) Mengurangi beban *web server* utama dan mempercepat waktu respon (*low latency*).
+  * (+) Menjamin keamanan penyimpanan berkas pendaftaran.
+  * (-) Memerlukan strategi konsistensi data secara asinkron (*eventual consistency*).
+
+---
+
+### ADR-03: Implementasi RBAC (Role-Based Access Control) untuk Penilaian Berkas
+* **Status:** Accepted
+* **Konteks:** Penilaian dan seleksi berkas beasiswa memerlukan kerahasiaan tinggi dan hanya boleh diakses oleh reviewer/assessor yang berhak.
+* **Keputusan:** Menggunakan skema RBAC ketat berbasis *JWT-based Authentication & Authorization* untuk membatasi akses hak pilih berkas sesuai wilayah atau kriteria penilai.
+* **Konsekuensi:**
+  * (+) Memastikan privasi data pemohon beasiswa dan akuntabilitas nilai seleksi.
+  * (-) Memerlukan sinkronisasi peran (*roles*) yang konsisten pada semua mikroservis.

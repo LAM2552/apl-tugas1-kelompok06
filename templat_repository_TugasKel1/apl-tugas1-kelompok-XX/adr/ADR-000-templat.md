@@ -20,7 +20,7 @@
 
 
 
-# ADR-[002]: [Enkripsi Berlapis dan Pemisahan Logika Bisnis Penilaian]
+# ADR-[002]: [Perlindungan Data Pribadi Sensitif]
 
 <!-- Salin berkas ini menjadi ADR-001-judul-singkat.md, ADR-002-... dan seterusnya. -->
 

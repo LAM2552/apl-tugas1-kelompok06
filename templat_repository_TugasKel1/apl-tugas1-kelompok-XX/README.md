@@ -36,8 +36,8 @@ Status: Belum / Draf / Selesai. Perbarui tabel ini setiap ada perubahan.
 | B3 | laporan/B3-tiga-struktur.md dan diagram/ | @Adit16Umi | Selesai |
 | B4 | laporan/B4-iso-25010.md |@rafsyaraptutu-dev | Selesai |
 | B5 | laporan/B5-trade-off.md | @aidilresse-cmyk | Selesai |
-| BAB IV | laporan/BAB4-penutup.md | | Belum |
-| Pustaka | laporan/daftar-pustaka.md | | Belum |
+| BAB IV | laporan/BAB4-penutup.md | @LAM2552 | Selesai |
+| Pustaka | laporan/daftar-pustaka.md | @LAM2552 | Selesai |
 
 ## Laporan PDF terakhir
 

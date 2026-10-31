@@ -1,7 +1,7 @@
 Penanggung Jawab: A.Muhammad Aditya Irawan
 # A5 - Keputusan Arsitektur (Architecture Decision Records)
 
-## 1. Ringkasan Daftar Keputusan Arsitektur (ADR)
+## 1.Daftar Keputusan Arsitektur (ADR)
 
 | Kode ADR | Judul Keputusan | Status | Tanggal | Pengambil Keputusan |
 | :--- | :--- | :--- | :--- | :--- |

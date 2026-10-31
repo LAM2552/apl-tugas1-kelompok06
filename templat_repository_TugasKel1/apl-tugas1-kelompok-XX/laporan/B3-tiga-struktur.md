@@ -4,8 +4,6 @@ Penanggung jawab : A.Muhammad Aditya Irawan
 ## 1. Struktur Modul (Module Structure)
 
 Deskripsi: Menggambarkan organisasi elemen kode, modul, dan dependensi logis dari sistem.
-
-* **Diagram:** B3-struktur-modul.png (sumber: B3-struktur-modul.drawio)
 * **Elemen Modul Utama:**
   i. `Registration Module`: Mengelola alur formulir pendaftaran beasiswa dan validasi data diri pemohon.
   ii. `Document Service Module`: Mengelola kompresi, penyimpanan, dan verifikasi berkas persyaratan.
@@ -17,8 +15,6 @@ Deskripsi: Menggambarkan organisasi elemen kode, modul, dan dependensi logis dar
 ## 2. Struktur Component & Connector (C&C Structure)
 
 Deskripsi: Menggambarkan komponen runtime (proses yang berjalan) serta saluran komunikasi/konektor di antaranya.
-
-* **Diagram:** B3-struktur-cc.png (sumber: B3-struktur-cc.drawio)
 * **Komponen & Konektor Utama:**
   i. `Client Devices`: Berinteraksi dengan pengguna melalui protokol HTTP/REST API.
   ii. `API Gateway`: Mengatur routing, rate limiting, dan otentikasi token JWT.
@@ -29,8 +25,6 @@ Deskripsi: Menggambarkan komponen runtime (proses yang berjalan) serta saluran k
 ## 3. Struktur Alokasi (Allocation Structure)
 
 Deskripsi: Menggambarkan bagaimana elemen perangkat lunak dipetakan ke lingkungan infrastruktur fisik atau cloud.
-
-* **Diagram:** B3-struktur-alokasi.png (sumber: B3-struktur-alokasi.drawio)
 * **Elemen Alokasi Utama:**
   i. `User Environment Layer`: Perangkat pendaftar (mahasiswa) dan tim penilai (reviewer).
   ii. `Kubernetes Cluster`: Cloud Server Node tempat pod aplikasi mikroservis dideploy.

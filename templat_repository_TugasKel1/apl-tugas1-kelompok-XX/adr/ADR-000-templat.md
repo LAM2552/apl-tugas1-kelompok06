@@ -32,7 +32,7 @@
 [Sistem wajib mengamankan data pribadi sensitif (KTP, slip gaji orang tua) dengan perlindungan ketat. Selain itu, alur seleksi harus menggunakan struktur kode modular agar mudah disesuaikan jika kriteria penilaian berubah. Ini merespons kebutuhan mahasiswa atas privasi data dan standar rekayasa perangkat lunak tim pengembang.]
 
 ## Decision
-[Kami akan merancang keamanan berlapis meliputi enkripsi at rest maupun in transit beserta pembatasan akses (Role-Based Access Control), dan melakukan pemisahan logika bisnis penilaian dari antarmuka pengguna.]
+[Kami akan merancang keamanan berlapis meliputi enkripsi at rest maupun in transit beserta pembatasan akses (Role-Based Access Control)]
 
 ## Consequences
 [Dampak positifnya, kerahasiaan data pribadi terjamin, manipulasi dokumen dicegah, dan pemeliharaan sistem bisa dilakukan tanpa harus merombak seluruh sistem. Trade-off-nya, tingkat kerumitan pengembangan awal akan bertambah.]

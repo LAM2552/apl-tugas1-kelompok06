@@ -1,4 +1,4 @@
-# Lampiran C. Lembar Pembagian Tugas Anggota
+# Lampiran Lembar Pembagian Tugas Anggota
 
 Isi oleh tiap anggota. Bukti berupa **tautan commit** atau tautan berkas/riwayat berkas di repository ini, atas akun sendiri.
 

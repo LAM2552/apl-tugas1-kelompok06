@@ -12,7 +12,7 @@ Cara mengambil tautan: buka tab **Commits**, klik commit yang dimaksud, salin al
 | 3 | | | U3 | | |
 | 4 | | | U4 | | |
 | 5 | 13020240081 | A.Muhammad Aditya Irawan | U5 | https://github.com/LAM2552/apl-tugas1-kelompok06/blob/main/UTS/laporan/U5.md | Selesai |
-| 6 | | | U6 | | |
+| 6 | 13020240339 | Ahmad Andira Alam | U6 | https://github.com/LAM2552/apl-tugas1-kelompok06/blob/main/UTS/laporan/U6.md | Selesai |
 | 7 | | | U7 | | |
 
 
